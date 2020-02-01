@@ -50,7 +50,7 @@ bool deserialize(const char* data,
   using google::protobuf::io::CodedInputStream;
   ArrayInputStream zero_stream(data, size);
   CodedInputStream coded_stream(&zero_stream);
-  coded_stream.SetTotalBytesLimit(max_decode_size, max_decode_size);
+  coded_stream.SetTotalBytesLimit(max_decode_size);
   bool ret = msg->ParseFromCodedStream(&coded_stream);
 //  CHECK(ret);
   return ret;
